@@ -15,7 +15,6 @@ function App() {
   }, []);
 
   async function handleAddRepository() {
-    // TODO
 
     const response = await api.post('repositories',{
       title: `Novo projeto ${Date.now()}`,
@@ -32,13 +31,10 @@ function App() {
   }
 
   async function handleRemoveRepository(id) {
-    // TODO
 
     await api.delete(`repositories/${id}`, {});
 
     const repoIndex = repositories.findIndex(repo => repo.id === id);
-
-    console.log(repositories);
   
     repositories.splice(repoIndex, 1);
 
